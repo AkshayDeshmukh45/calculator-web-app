@@ -1,6 +1,6 @@
 // import { i } from "mathjs";
 import React, { useState } from "react";
-import "./styles.css";
+import "./App.css";
 
 export default function App() {
   const [result, setResult] = useState("0");
