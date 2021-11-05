@@ -1,0 +1,20 @@
+h1, p {
+  font-family: Lato;
+}
+input{
+  display: inline;
+  height: 55px;
+  width: 400px;
+  text-align: end;
+  font-size: medium;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+button{
+   height: 55px;
+   width: 100px;
+   text-align: center;
+   top: 25px;
+   margin: 0 auto;
+  
+}
