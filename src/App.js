@@ -8,7 +8,7 @@ export default function App() {
   const [prevResult] = useState([]);
   // const [resultArr,setResultArr]=useState(()=>localStorage.getItem("result"));
 
-  //function for printing number
+  //buttons array for printing number
   const btns = [
     "CLEAR",
     "DEL",
@@ -33,6 +33,8 @@ export default function App() {
   //set and get values in local storage
   console.log(btns);
 // let prevResult= [];
+
+//pushing the prev results into result.. 
   prevResult.push(result);
   localStorage.setItem("result", JSON.stringify(prevResult));
   localStorage.getItem("result", JSON.stringify(result));
