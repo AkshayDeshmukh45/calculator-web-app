@@ -182,7 +182,6 @@ export default function App() {
         <h1 style={{ color: "Blue" }}>{result} </h1>
         {/* {handle} */}
       </div>
-      <div></div>
       {localStorage.getItem("result") && (
         <div>
           <p>{localStorage.getItem("result")}</p>
