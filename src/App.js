@@ -1,9 +1,7 @@
-import React, {useState } from "react";
-import "./styles.css";
+import React, { useState } from "react";
+import "./App.css";
 
 export default function App() {
-
-  
   const [result, setResult] = useState("0");
   const [prevResult] = useState([]);
   // const [resultArr,setResultArr]=useState(()=>localStorage.getItem("result"));
@@ -28,24 +26,24 @@ export default function App() {
     "+",
     ".",
     "0",
-    "="
+    "=",
   ];
   //set and get values in local storage
   console.log(btns);
-// let prevResult= [];
+  // let prevResult= [];
 
-//pushing the prev results into result.. 
+  //pushing the prev results into result..
   prevResult.push(result);
   localStorage.setItem("result", JSON.stringify(prevResult));
   localStorage.getItem("result", JSON.stringify(result));
   console.log(JSON.stringify(result));
 
-//   const handle = () => {
-//     localStorage.setItem('result', prevResult);
-//     localStorage.setItem('result', result);
-//  };
-//   var storedArray = localStorage.getItem("result");
-// prevResult = JSON.parse(storedArray);
+  //   const handle = () => {
+  //     localStorage.setItem('result', prevResult);
+  //     localStorage.setItem('result', result);
+  //  };
+  //   var storedArray = localStorage.getItem("result");
+  // prevResult = JSON.parse(storedArray);
   //set local storage data
   // const storeItem = () => {
   //   if (!result) {
@@ -179,20 +177,18 @@ export default function App() {
 
   return (
     <div>
-
       <div className="recentData">
         <h2>History</h2>
         <h1 style={{ color: "Blue" }}>{result} </h1>
         {/* {handle} */}
-   </div>
-   <div>
-   </div>
-        {localStorage.getItem('result') && (
-            <div>
-              <p>{localStorage.getItem('result')}</p>
-            </div>
-         )}
-        
+      </div>
+      <div></div>
+      {localStorage.getItem("result") && (
+        <div>
+          <p>{localStorage.getItem("result")}</p>
+        </div>
+      )}
+
       <form>
         <input
           type="text"
