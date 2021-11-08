@@ -1,11 +1,12 @@
-// import { i } from "mathjs";
-import React, { useState } from "react";
-import "./App.css";
+import React, {useState } from "react";
+import "./styles.css";
 
 export default function App() {
+
+  
   const [result, setResult] = useState("0");
   const [prevResult] = useState([]);
-  const [resultArr,setResultArr]=useState(()=>localStorage.getItem("result"));
+  // const [resultArr,setResultArr]=useState(()=>localStorage.getItem("result"));
 
   //function for printing number
   const btns = [
@@ -31,13 +32,36 @@ export default function App() {
   ];
   //set and get values in local storage
   console.log(btns);
-
- 
-  console.log(JSON.stringify(result));
-
+// let prevResult= [];
   prevResult.push(result);
   localStorage.setItem("result", JSON.stringify(prevResult));
   localStorage.getItem("result", JSON.stringify(result));
+  console.log(JSON.stringify(result));
+
+//   const handle = () => {
+//     localStorage.setItem('result', prevResult);
+//     localStorage.setItem('result', result);
+//  };
+//   var storedArray = localStorage.getItem("result");
+// prevResult = JSON.parse(storedArray);
+  //set local storage data
+  // const storeItem = () => {
+  //   if (!result) {
+  //   } else {
+  //     localStorage.setItem([...prevResult, result]);
+  //     setResult("");
+  //   }
+  // };
+  // //ADD data to local storage
+  // useEffect(() => {
+  //   localStorage.setItem("lists", JSON.stringify(result));
+  // }, [result]);
+
+  //GET DATA FROM LOCAL STORAGE
+  // const getData = () => {
+  //   const get = localStorage.getItem(JSON.stringify("lists"));
+  //   console.log(get);
+  // };
 
   //math calcultions
   const handleKey = (keys) => {
@@ -153,29 +177,31 @@ export default function App() {
 
   return (
     <div>
+
       <div className="recentData">
         <h2>History</h2>
-        <h1 style={{ color: "Blue" }}>{result} <h1>
-        </div>
+        <h1 style={{ color: "Blue" }}>{result} </h1>
+        {/* {handle} */}
+   </div>
+   <div>
+   </div>
         {localStorage.getItem('result') && (
             <div>
               <p>{localStorage.getItem('result')}</p>
             </div>
          )}
-      </div>
-      </div>
-      
+        
       <form>
         <input
           type="text"
           result={(e) => setResult(e.target.value)}
           value={result}
-          id="inputForm"
+          id="key"
         />
       </form>
       <div className="keyPad">
         {btns.map((keys, i) => (
-          <button key={i}  onClick={() => handleKey(keys)}>
+          <button key={i} onClick={() => handleKey(keys)}>
             {keys}
           </button>
         ))}
