@@ -155,7 +155,14 @@ export default function App() {
     <div>
       <div className="recentData">
         <h2>History</h2>
-        <h1 style={{ color: "Blue" }}>{result.concat(" ")} </h1>
+        <h1 style={{ color: "Blue" }}>{result} <h1>
+        </div>
+        {localStorage.getItem('result') && (
+            <div>
+              <p>{localStorage.getItem('result')}</p>
+            </div>
+         )}
+      </div>
       </div>
       
       <form>
